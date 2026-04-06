@@ -1,6 +1,5 @@
 # ASP.NET-GameStore
-### Project for CPW 230
-
+## Project for CPW 230
 
 ## Project Description
 This project is an online game store where users can browse and purchase games. The site lets customers search for games, add them to a cart, and place orders. Admins can manage the game listings and view orders through a simple dashboard.
