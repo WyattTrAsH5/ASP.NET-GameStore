@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CGlW0rXHXO8=",
+  "dgSpecHash": "Z+0kjOdMFac=",
   "success": true,
-  "projectFilePath": "C:\\Schoolwork\\CPW 235\\ASP.NET-GameStore\\ASP.NET-GameStore\\ASP.NET-GameStore.csproj",
+  "projectFilePath": "C:\\Schoolwork\\CPW 235\\ASP.NET-GameStore\\ASP.NET-GameStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Wyatt\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Wyatt\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

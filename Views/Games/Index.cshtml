@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ASP.NET_GameStore.Models.Game>
+
+<h2>Game Store</h2>
+
+<form method="get">
+    <input type="text" name="search" placeholder="Search games..." />
+    <input type="text" name="genre" placeholder="Genre..." />
+    <input type="text" name="platform" placeholder="Platform..." />
+    <button type="submit">Search</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Platform</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var game in Model)
+        {
+            <tr>
+                <td>@game.Title</td>
+                <td>@game.Genre</td>
+                <td>@game.Platform</td>
+                <td>@game.Price.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
