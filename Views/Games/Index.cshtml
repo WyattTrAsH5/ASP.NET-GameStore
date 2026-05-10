@@ -27,6 +27,9 @@
                 <td>@game.Platform</td>
                 <td>@game.Price.ToString("C")</td>
             </tr>
+            <td>
+                <a asp-controller="Cart" asp-action="Add" asp-route-id="@game.Id" class="btn btn-primary btn-sm">Add to Cart</a>
+            </td>
         }
     </tbody>
 </table>
