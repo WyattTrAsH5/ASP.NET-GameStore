@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ASP.NET_GameStore.Models.Game>
+
+<h2>Admin — Manage Games</h2>
+<a asp-action="Create" class="btn btn-success mb-3">Add New Game</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Platform</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var game in Model)
+        {
+            <tr>
+                <td>@game.Title</td>
+                <td>@game.Genre</td>
+                <td>@game.Platform</td>
+                <td>@game.Price.ToString("C")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@game.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@game.Id" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
