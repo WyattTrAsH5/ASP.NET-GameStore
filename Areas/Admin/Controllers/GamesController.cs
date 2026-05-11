@@ -10,7 +10,7 @@ namespace ASP.NET_GameStore.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class GamesController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly AppDbContext _context;      
 
         public GamesController(AppDbContext context)
         {
