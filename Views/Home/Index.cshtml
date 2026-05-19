@@ -1,8 +1,39 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Hero Section -->
+<div class="hero-section mb-4">
+    <h1 class="display-4 fw-bold">Welcome to ASP.NET GameStore</h1>
+    <a asp-controller="Games" asp-action="Index" class="btn btn-primary btn-lg mt-3">Browse Games</a>
+</div>
+
+<!-- Feature Cards -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Large Selection</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Great Prices</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Easy Checkout</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Shop Now Section -->
+<div class="text-center py-4">
+    <a asp-controller="Games" asp-action="Index" class="btn btn-primary btn-lg">Shop Now</a>
 </div>
