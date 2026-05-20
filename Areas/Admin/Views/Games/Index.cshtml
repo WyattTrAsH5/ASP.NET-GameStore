@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<ASP.NET_GameStore.Models.Game>
 
-<h2>Admin — Manage Games</h2>
-<a asp-action="Create" class="btn btn-success mb-3">Add New Game</a>
+<h2 class="mb-4">Admin — Manage Games</h2>
+<a href="/Admin/Games/Create" class="btn btn-success mb-3">Add New Game</a>
 
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
             <th>Title</th>
@@ -22,8 +22,8 @@
                 <td>@game.Platform</td>
                 <td>@game.Price.ToString("C")</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@game.Id" class="btn btn-warning btn-sm">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@game.Id" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                    <a href="/Admin/Games/Edit/@game.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/Admin/Games/Delete/@game.Id" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
             </tr>
         }

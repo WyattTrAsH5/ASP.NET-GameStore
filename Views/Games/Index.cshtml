@@ -1,35 +1,53 @@
 ﻿@model IEnumerable<ASP.NET_GameStore.Models.Game>
 
-<h2>Game Store</h2>
+<h2 class="mb-4">Game Store</h2>
 
-<form method="get">
-    <input type="text" name="search" placeholder="Search games..." />
-    <input type="text" name="genre" placeholder="Genre..." />
-    <input type="text" name="platform" placeholder="Platform..." />
-    <button type="submit">Search</button>
+<!-- Search Bar -->
+<form method="get" class="row g-2 mb-4">
+    <div class="col-md-4">
+        <input type="text" name="search" placeholder="Search games..." class="form-control" />
+    </div>
+    <div class="col-md-3">
+        <input type="text" name="genre" placeholder="Genre..." class="form-control" />
+    </div>
+    <div class="col-md-3">
+        <input type="text" name="platform" placeholder="Platform..." class="form-control" />
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary w-100">Search</button>
+    </div>
 </form>
 
-<table>
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Genre</th>
-            <th>Platform</th>
-            <th>Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var game in Model)
-        {
+<!-- Games Table -->
+@if (!Model.Any())
+{
+    <p>No games found.</p>
+}
+else
+{
+    <table class="table table-hover">
+        <thead>
             <tr>
-                <td>@game.Title</td>
-                <td>@game.Genre</td>
-                <td>@game.Platform</td>
-                <td>@game.Price.ToString("C")</td>
+                <th style="width: 30%">Title</th>
+                <th style="width: 25%">Genre</th>
+                <th style="width: 20%">Platform</th>
+                <th style="width: 10%">Price</th>
+                <th style="width: 15%"></th>
             </tr>
-            <td>
-                <a asp-controller="Cart" asp-action="Add" asp-route-id="@game.Id" class="btn btn-primary btn-sm">Add to Cart</a>
-            </td>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var game in Model)
+            {
+                <tr>
+                    <td>@game.Title</td>
+                    <td>@game.Genre</td>
+                    <td>@game.Platform</td>
+                    <td>@game.Price.ToString("C")</td>
+                    <td>
+                        <a href="/Cart/Add/@game.Id" class="btn btn-primary btn-sm">Add to Cart</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

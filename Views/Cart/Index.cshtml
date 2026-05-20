@@ -1,6 +1,6 @@
 ﻿@model List<ASP.NET_GameStore.Models.CartItem>
 
-<h2>Your Cart</h2>
+<h2 class="mb-4">Your Cart</h2>
 
 @if (!Model.Any())
 {
@@ -8,14 +8,14 @@
 }
 else
 {
-    <table class="table">
+    <table class="table table-hover">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Subtotal</th>
-                <th></th>
+                <th style="width: 35%">Title</th>
+                <th style="width: 20%">Price</th>
+                <th style="width: 15%">Quantity</th>
+                <th style="width: 15%">Subtotal</th>
+                <th style="width: 15%"></th>
             </tr>
         </thead>
         <tbody>
@@ -27,11 +27,18 @@ else
                     <td>@item.Quantity</td>
                     <td>@((item.Price * item.Quantity).ToString("C"))</td>
                     <td>
-                        <a asp-action="Remove" asp-route-id="@item.GameId" class="btn btn-danger btn-sm">Remove</a>
+                        <a href="/Cart/Remove/@item.GameId" class="btn btn-danger btn-sm">Remove</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    <h4>Total: @Model.Sum(i => i.Price * i.Quantity).ToString("C")</h4>
+
+    <div class="d-flex justify-content-between align-items-center mt-4 p-3" style="border-top: 2px solid #ffc107;">
+        <h4>Total: @Model.Sum(i => i.Price * i.Quantity).ToString("C")</h4>
+        <div>
+            <a asp-controller="Games" asp-action="Index" class="btn btn-secondary me-2">Continue Shopping</a>
+            <a href="#" class="btn btn-primary">Checkout</a>
+        </div>
+    </div>
 }
