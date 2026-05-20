@@ -166,3 +166,20 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+
+/* Table hover effect */
+.table-hover tbody tr:hover {
+    background-color: #333333 !important;
+    color: #ffc107 !important;
+    cursor: pointer;
+}
+
+/* Search bar alignment */
+.row.g-2 .form-control {
+    height: 42px;
+}
+
+::placeholder {
+    color: #888888 !important;
+    opacity: 1 !important;
+}

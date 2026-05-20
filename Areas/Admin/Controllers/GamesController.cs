@@ -30,13 +30,9 @@ namespace ASP.NET_GameStore.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Game game)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Games.Add(game);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
-            return View(game);
+            _context.Games.Add(game);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Edit(int id)
@@ -49,13 +45,9 @@ namespace ASP.NET_GameStore.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Game game)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Games.Update(game);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
-            return View(game);
+            _context.Games.Update(game);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Delete(int id)
