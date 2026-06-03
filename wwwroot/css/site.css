@@ -1,42 +1,64 @@
+/* =====================
+   Base & Layout
+   ===================== */
+
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+html, body {
+    height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
-}
-
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
-}
-
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
-}
-
-/* Dark Mode Base */
-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    font-family: 'Oswald', sans-serif !important;
+}
+
+.container {
+    flex: 1;
+    max-width: 100% !important;
+    padding: 0 30px;
+}
+
+/* =====================
+   Typography
+   ===================== */
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Bungee', cursive !important;
+    letter-spacing: 2px;
+    color: #ffc107 !important;
+}
+
+p, label {
     color: #ffffff !important;
 }
 
-/* Navbar */
+a {
+    color: #ffc107 !important;
+}
+
+    a:hover {
+        color: #ffffff !important;
+    }
+
+/* =====================
+   Navbar
+   ===================== */
+
 .navbar {
     background-color: #111111 !important;
     border-bottom: 2px solid #ffc107;
@@ -50,26 +72,17 @@ body {
         color: #ffffff !important;
     }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-    color: #ffc107 !important;
+/* =====================
+   Buttons
+   ===================== */
+
+.btn {
+    border-radius: 3px !important;
+    font-family: 'Oswald', sans-serif !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-/* Text */
-p, label {
-    color: #ffffff !important;
-}
-
-/* Links */
-a {
-    color: #ffc107 !important;
-}
-
-    a:hover {
-        color: #ffffff !important;
-    }
-
-/* Buttons */
 .btn-primary, .btn-success {
     background-color: #ffc107 !important;
     border-color: #ffc107 !important;
@@ -82,7 +95,14 @@ a {
         border-color: #e0a800 !important;
     }
 
-/* Cards */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* =====================
+   Cards
+   ===================== */
+
 .card {
     background-color: #2a2a2a !important;
     border: 1px solid #ffc107 !important;
@@ -93,7 +113,10 @@ a {
     color: #ffffff !important;
 }
 
-/* Tables */
+/* =====================
+   Tables
+   ===================== */
+
 .table {
     color: #ffffff !important;
     border-color: #ffc107 !important;
@@ -111,7 +134,16 @@ a {
         border-color: #ffc107 !important;
     }
 
-/* Forms */
+.table-hover tbody tr:hover {
+    background-color: #333333 !important;
+    color: #ffc107 !important;
+    cursor: pointer;
+}
+
+/* =====================
+   Forms
+   ===================== */
+
 .form-control {
     background-color: #2a2a2a !important;
     border-color: #ffc107 !important;
@@ -125,56 +157,10 @@ a {
         box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25) !important;
     }
 
-/* Footer */
-footer {
-    background-color: #111111 !important;
-    border-top: 2px solid #ffc107;
-    color: #ffc107 !important;
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-/* Hero Section */
-.hero-section {
-    background-color: #111111;
-    border-left: 5px solid #ffc107;
-    padding: 60px 40px;
-    width: 100%;
-}
-
-/* Square edged buttons */
-.btn {
-    border-radius: 3px !important;
-}
-
-/* Remove container max width restriction */
-.container {
-    max-width: 100% !important;
-    padding: 0 30px;
-}
-
-/* Fonts */
-body {
-    font-family: 'Oswald', sans-serif !important;
-}
-
-h1, h2, h3, h4, h5, h6, .navbar-brand {
-    font-family: 'Bungee', cursive !important;
-    letter-spacing: 2px;
-}
-
-.btn {
-    font-family: 'Oswald', sans-serif !important;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-/* Table hover effect */
-.table-hover tbody tr:hover {
-    background-color: #333333 !important;
-    color: #ffc107 !important;
-    cursor: pointer;
-}
-
-/* Search bar alignment */
 .row.g-2 .form-control {
     height: 42px;
 }
@@ -182,4 +168,37 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 ::placeholder {
     color: #888888 !important;
     opacity: 1 !important;
+}
+
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+/* =====================
+   Hero Section
+   ===================== */
+
+.hero-section {
+    background-color: #111111;
+    border-left: 5px solid #ffc107;
+    padding: 60px 40px;
+    width: 100%;
+}
+
+/* =====================
+   Footer
+   ===================== */
+
+footer {
+    margin-top: auto;
+    background-color: #111111 !important;
+    border-top: 2px solid #ffc107;
+    color: #ffc107 !important;
 }
